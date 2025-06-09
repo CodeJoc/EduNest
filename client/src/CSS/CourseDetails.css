@@ -1,0 +1,21 @@
+.course-details {
+    padding: 60px 40px;
+    max-width: 1000px;
+    margin: auto;
+  }
+  
+  .lecture {
+    margin-bottom: 40px;
+  }
+  
+  .lecture h4 {
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  .video-container {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
+  

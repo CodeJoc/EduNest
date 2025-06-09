@@ -1,0 +1,49 @@
+/* src/LandingPage.css */
+.landing-page {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    background-image: url('../Images/1.jpg'); /* Replace with your image URL */
+     /* update this to your actual background image */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .overlay {
+    background-color: rgba(0, 0, 0, 0.5); /* dark transparent overlay */
+    color: white;
+    padding: 40px;
+    border-radius: 15px;
+    text-align: center;
+    max-width: 600px;
+    width: 90%;
+  }
+  
+  .overlay h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+  }
+  
+  .overlay p {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+  }
+  
+  .overlay button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: yellow;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  .overlay button:hover {
+    background-color: #fdd835;
+  }
+  

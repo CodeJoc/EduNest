@@ -1,0 +1,44 @@
+.admin-panel {
+    padding: 60px 30px;
+    max-width: 800px;
+    margin: auto;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  }
+  
+  .admin-panel h2 {
+    color: #007BFF;
+    margin-bottom: 20px;
+  }
+  
+  .create-course-form input,
+  .create-course-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+  }
+  
+  .create-course-form button {
+    padding: 12px 20px;
+    background-color: #007BFF;
+    border: none;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 6px;
+  }
+  
+  ul {
+    margin-top: 15px;
+    list-style: square;
+  }
+  
+  .user-stats {
+    margin-top: 40px;
+    font-size: 1.1rem;
+    color: #444;
+  }
+  
