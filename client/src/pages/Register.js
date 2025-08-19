@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import API from '../utils/api';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link} from 'react-router-dom';
 import '../CSS/Auth.css';
 
 export default function Register() {
@@ -11,20 +11,29 @@ export default function Register() {
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      const res = await API.post("/auth/register", {
-        name: fullName,
-        email,
-        password,
-        role
-      });
-      localStorage.setItem("token", res.data.token);
-      role === 'admin' ? navigate('/admin') : navigate('/dashboard');
-    } catch (err) {
-      alert(err.response?.data?.msg || "Registration failed");
+  e.preventDefault();
+  try {
+    const res = await API.post("/auth/register", {
+      name: fullName,
+      email,
+      password,
+      role
+    });
+    localStorage.setItem("token", res.data.token);
+
+    // Store full name for navbar initials
+    if (res.data.user && res.data.user.name) {
+      localStorage.setItem("user", JSON.stringify({ name: res.data.user.name }));
+    } else {
+      localStorage.setItem("user", JSON.stringify({ name: fullName.charAt(0).toUpperCase() }));
     }
-  };
+
+    role === 'admin' ? navigate('/admin') : navigate('/dashboard');
+  } catch (err) {
+    alert(err.response?.data?.msg || "Registration failed");
+  }
+};
+
 
   return (
     <div className="auth-page">

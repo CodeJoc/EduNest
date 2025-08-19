@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import API from '../utils/api';
 import { useNavigate, Link } from 'react-router-dom';
-import '../CSS/Auth.css'; // You need to create this file
+import '../CSS/Auth.css'; // Your existing styles
 
 export default function Login() {
   const [email, setEmail] = useState('');
@@ -12,7 +12,20 @@ export default function Login() {
     e.preventDefault();
     try {
       const res = await API.post("/auth/login", { email, password });
+
+      // Store token for authentication
       localStorage.setItem("token", res.data.token);
+
+      // Store user info for avatar initials in navbar
+      // Adjust this based on your backend's actual response shape:
+      if (res.data.user && res.data.user.name) {
+        localStorage.setItem("user", JSON.stringify({ name: res.data.user.name }));
+      } else {
+        // Fallback: use email initial capitalized if user name not returned
+        localStorage.setItem("user", JSON.stringify({ name: email.charAt(0).toUpperCase() }));
+      }
+
+      // Navigate based on user role
       const role = res.data.role;
       role === 'admin' ? navigate('/admin') : navigate('/dashboard');
     } catch (err) {
@@ -29,12 +42,14 @@ export default function Login() {
             type="email"
             placeholder="Email"
             onChange={(e) => setEmail(e.target.value)}
+            value={email}
             required
           />
           <input
             type="password"
             placeholder="Password"
             onChange={(e) => setPassword(e.target.value)}
+            value={password}
             required
           />
           <button type="submit">Login</button>

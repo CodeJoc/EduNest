@@ -1,37 +1,42 @@
-import React, { useEffect, useState } from "react";
-import API from "../utils/api";
+import React from "react";
 import { useNavigate } from "react-router-dom";
+import { FaReact, FaNodeJs, FaHtml5 } from "react-icons/fa"; 
+import "../CSS/CourseList.css";
+
+const courseList = [
+  { _id: "1", title: "React for Beginners", description: "Learn React from scratch.", icon: <FaReact color="#62dafb" size={36} /> },
+  { _id: "2", title: "Node.js Essentials", description: "Backend with Node.js.", icon: <FaNodeJs color="#70c141" size={36} /> },
+  { _id: "3", title: "HTML & CSS", description: "Basics of web development.", icon: <FaHtml5 color="#e54d26" size={36} /> },
+];
 
 export default function CourseList() {
-  const [courses, setCourses] = useState([]);
   const navigate = useNavigate();
 
-  useEffect(() => {
-    API.get("/courses")
-      .then((res) => setCourses(res.data))
-      .catch(() => alert("Could not load courses"));
-  }, []);
-
   const enroll = async (id) => {
-    try {
-      await API.post(`/courses/${id}/enroll`);
-      alert("Enrolled successfully");
-    } catch {
-      alert("Enrollment failed");
-    }
+    alert("Enrolled in course " + id );
   };
 
   return (
-    <div className="p-4">
-      <h2>All Courses</h2>
-      {courses.map((course) => (
-        <div key={course._id} className="card mb-2 p-2">
-          <h4>{course.title}</h4>
-          <p>{course.description}</p>
-          <button onClick={() => enroll(course._id)}>Enroll</button>
-          <button onClick={() => navigate(`/course/${course._id}`)}>Details</button>
-        </div>
-      ))}
+    <div className="course-list-bg">
+      <div className="course-list-header">
+        {/* <span className="logo-main">EduNest</span> */}
+        <h2 className="course-list-title">All Courses</h2>
+      </div>
+      <div className="vertical-course-list">
+        {courseList.map((course) => (
+          <div key={course._id} className="vertical-course-item">
+            <div className="course-icon-box">{course.icon}</div>
+            <div>
+              <h4 className="vertical-course-name">{course.title}</h4>
+              <p className="vertical-course-desc">{course.description}</p>
+            </div>
+            <div className="vertical-course-btns">
+              <button onClick={() => enroll(course._id)}>Enroll</button>
+              <button onClick={() => navigate(`/course/${course._id}`)}>Details</button>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }

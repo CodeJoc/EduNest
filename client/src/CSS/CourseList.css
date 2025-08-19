@@ -1,0 +1,94 @@
+.course-list-bg {
+  max-width: 650px;
+  margin: 0 auto;
+  padding: 40px 10px 60px;
+}
+
+.course-list-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px;
+  margin-bottom: 22px;
+  margin-top: 18px;
+}
+
+.logo-main {
+  font-size: 1.7rem;
+  font-weight: bold;
+  color: #007BFF;
+  letter-spacing: 1px;
+}
+
+.course-list-title {
+  font-size: 1.6rem;
+  color: #1871c5;
+  font-weight: 700;
+  margin: 0;
+}
+
+.vertical-course-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.vertical-course-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 20px 0 16px 0;
+  border-bottom: 1.5px solid #e2e9f5;
+  background: none;
+}
+
+.vertical-course-item:last-child {
+  border-bottom: none;
+}
+
+.course-icon-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background: #f3f8ff;
+  border-radius: 13px;
+  margin-right: 6px;
+  box-shadow: 0 2px 6px rgba(32, 100, 200, 0.06);
+}
+
+.vertical-course-name {
+  font-size: 1.18rem;
+  color: #1a3f69;
+  margin-bottom: 3px;
+  font-weight: 600;
+}
+
+.vertical-course-desc {
+  color: #556;
+  font-size: 0.99rem;
+  margin-bottom: 2px;
+}
+
+.vertical-course-btns {
+  display: flex;
+  gap: 9px;
+  margin-left: auto;
+}
+
+.vertical-course-btns button {
+  background: #1871c5;
+  color: white;
+  border: none;
+  border-radius: 7px;
+  padding: 7px 19px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  margin-right: 0;
+  transition: background 0.14s;
+}
+
+.vertical-course-btns button:hover {
+  background: #094db2;
+}

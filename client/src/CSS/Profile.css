@@ -1,0 +1,133 @@
+.profile-open-bg {
+  background: linear-gradient(120deg, #eaf6ff 0%, #f3f7fa 95%);
+  min-height: 100vh;
+  padding: 40px 0 50px 0;
+}
+
+/* Header with larger name, circle initials, but NOT boxed */
+.profile-header-plain {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  margin-bottom: 20px;
+  padding-left: 13vw;
+  padding-right: 13vw;
+}
+
+.profile-initials-open {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #298dff22;
+  color: #1970c1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-right: 10px;
+  letter-spacing: 2px;
+  border: 2.5px solid #b2d7fa;
+}
+
+.profile-name-plain {
+  font-size: 2.1rem;
+  font-weight: 700;
+  margin: 0;
+  color: #234;
+}
+.profile-email-plain {
+  font-size: 1.02rem;
+  color: #667;
+  opacity: 0.8;
+  margin-top: 3px;
+}
+
+.profile-section-open {
+  padding: 28px 0 16px 13vw;
+  border-left: 5px solid #e7eefc;
+  margin-bottom: 18px;
+}
+
+.profile-sec-title {
+  font-size: 1.15rem;
+  font-weight: bold;
+  color: #1871c5;
+  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+ul {
+  list-style: disc;
+  margin-left: 1.3em;
+  margin-bottom: 8px;
+  margin-top: 1px;
+  padding-left: 0;
+}
+
+.degree, .school {
+  font-weight: 500;
+}
+
+.years {
+  color: #646aa9;
+  font-size: 0.99em;
+}
+
+.muted {
+  color: #aaa;
+}
+
+.inline-form {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 9px;
+  margin-top: 4px;
+}
+
+.inline-form input {
+  padding: 6px 7px;
+  border-radius: 5px;
+  border: 1.1px solid #b7c8e1;
+  font-size: 0.99rem;
+  background: #f7faff;
+  transition: border 0.14s;
+}
+.inline-form input:focus {
+  border: 1.6px solid #259cff;
+  outline: none;
+  background: #fff;
+}
+.inline-form button,
+.bare-btn {
+  background: #259cff;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.98rem;
+  font-weight: 600;
+  padding: 7px 15px;
+  cursor: pointer;
+  margin-left: 6px;
+  transition: background .13s;
+}
+.bare-btn {
+  padding: 5px 12px;
+  background: #e7eefc;
+  color: #167bc7;
+  border-radius: 7px;
+  font-weight: 700;
+}
+.bare-btn:hover {
+  background: #daecff;
+  color: #0057b2;
+}
+
+.profile-loading {
+  text-align: center;
+  color: #167bc7;
+  margin-top: 28px;
+  font-size: 1.3rem;
+}

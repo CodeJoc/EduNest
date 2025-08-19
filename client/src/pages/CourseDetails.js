@@ -21,24 +21,46 @@ export default function CourseDetails() {
   const { id } = useParams();
   const lectures = lectureData[id] || [];
 
+  // Optionally set a pseudo course name for demo
+  const courseNames = {
+    1: "React for Beginners",
+    2: "Node.js Essentials",
+    3: "HTML & CSS",
+  };
+  const courseTitle = courseNames[id] || "Course Lectures";
+
   return (
-    <div className="course-details">
-      <h2>Course Lectures</h2>
-      {lectures.map((lecture, index) => (
-        <div key={index} className="lecture">
-          <h4>{lecture.title}</h4>
-          <div className="video-container">
-            <iframe
-              width="100%"
-              height="315"
-              src={lecture.videoUrl}
-              title={lecture.title}
-              frameBorder="0"
-              allowFullScreen
-            ></iframe>
-          </div>
-        </div>
-      ))}
+    <div className="course-details-bg">
+      <div className="course-details-container">
+        <header className="course-banner">
+          <h2 className="course-title">{courseTitle}</h2>
+          <p className="course-subtitle">
+            {lectures.length} {lectures.length === 1 ? "Lecture" : "Lectures"}
+          </p>
+        </header>
+
+        <section>
+          {lectures.map((lecture, index) => (
+            <div key={index} className="lecture-card">
+              <div className="lecture-title-row">
+                <div className="lecture-number">Lecture {index + 1}</div>
+                <div className="lecture-title">{lecture.title}</div>
+              </div>
+              <div className="video-container">
+                <iframe
+                  width="100%"
+                  height="376"
+                  src={lecture.videoUrl}
+                  title={lecture.title}
+                  frameBorder="0"
+                  allowFullScreen
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                ></iframe>
+              </div>
+            </div>
+          ))}
+        </section>
+      </div>
     </div>
   );
 }
