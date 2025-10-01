@@ -1,1 +1,1 @@
-export const server = process.env.REACT_APP_SERVER;
+export const server = import.meta.env.VITE_SERVER;
