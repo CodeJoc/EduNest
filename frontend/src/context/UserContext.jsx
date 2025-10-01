@@ -1,6 +1,6 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import axios from "axios";
-import { server } from "../main";
+import { server } from "../config";
 import toast, { Toaster } from "react-hot-toast";
 
 const UserContext = createContext();
