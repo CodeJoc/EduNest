@@ -6,7 +6,7 @@ import CourseCard from "../../components/coursecard/CourseCard";
 import "./admincourses.css";
 import toast from "react-hot-toast";
 import axios from "axios";
-import { server } from "../../config";
+import { server } from "../../main";
 
 const categories = [
   "Web Development",
@@ -127,7 +127,7 @@ const AdminCourses = ({ user }) => {
                   required
                 />
 
-                <label htmlFor="text">createdBy</label>
+                <label htmlFor="text">Created By</label>
                 <input
                   type="text"
                   value={createdBy}

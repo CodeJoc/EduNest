@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 import axios from "axios";
-import { server } from "../../config";
+import { server } from "../../main";
 
 const ResetPassword = () => {
   const [password, setPassword] = useState("");

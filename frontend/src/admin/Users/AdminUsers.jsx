@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./users.css";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import { server } from "../../config";
+import { server } from "../../main";
 import Layout from "../Utils/Layout";
 import toast from "react-hot-toast";
 
@@ -60,11 +60,11 @@ const AdminUsers = ({ user }) => {
         <table border={"black"}>
           <thead>
             <tr>
-              <td>#</td>
-              <td>name</td>
-              <td>email</td>
-              <td>role</td>
-              <td>update role</td>
+              <td>S.No.</td>
+              <td>Name</td>
+              <td>Email</td>
+              <td>Role</td>
+              <td>Change Role</td>
             </tr>
           </thead>
 

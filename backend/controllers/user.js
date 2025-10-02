@@ -122,7 +122,7 @@ export const forgotPassword = TryCatch(async (req, res) => {
 
   const data = { email, token };
 
-  await sendForgotMail("E learning", data);
+  await sendForgotMail("EduNest", data);
 
   user.resetPasswordExpire = Date.now() + 5 * 60 * 1000;
 

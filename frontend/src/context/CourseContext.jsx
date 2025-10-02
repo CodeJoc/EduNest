@@ -1,6 +1,6 @@
 import axios from "axios";
 import { createContext, useContext, useEffect, useState } from "react";
-import { server } from "../config";
+import { server } from "../main";
 
 const CourseContext = createContext();
 

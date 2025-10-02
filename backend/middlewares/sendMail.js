@@ -133,8 +133,8 @@ export const sendForgotMail = async (subject, data) => {
     <a href="${process.env.frontendurl}/reset-password/${data.token}" class="button">Reset Password</a>
     <p>If you did not request this, please ignore this email.</p>
     <div class="footer">
-      <p>Thank you,<br>Your Website Team</p>
-      <p><a href="https://yourwebsite.com">yourwebsite.com</a></p>
+      <p>Thank you,<br>EduNest</p>
+      <p><a href="http://localhost:5173">EduNest</a></p>
     </div>
   </div>
 </body>

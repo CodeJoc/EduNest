@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./coursedescription.css";
 import { useNavigate, useParams } from "react-router-dom";
 import { CourseData } from "../../context/CourseContext";
-import { server } from "../../config";
+import { server } from "../../main";
 import axios from "axios";
 import toast from "react-hot-toast";
 import { UserData } from "../../context/UserContext";
@@ -43,8 +43,9 @@ const CourseDescription = ({ user }) => {
       amount: order.id, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
       currency: "INR",
       name: "EduNest", //your business name
-      description: "Learn with us",
-      order_id: order.id, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+      description: "Learning made fun",
+      //image: "link"
+      order_id: order.id,
 
       handler: async function (response) {
         const { razorpay_order_id, razorpay_payment_id, razorpay_signature } =

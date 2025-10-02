@@ -5,7 +5,7 @@ const Testimonials = () => {
   const testimonialsData = [
     {
         id: 1,
-        name: "Aarav Mehta",
+        name: "John",
         position: "Student",
         message:
         "EduNest has completely changed the way I study. The lessons are simple, clear, and really fun to follow.",
@@ -14,7 +14,7 @@ const Testimonials = () => {
     },
     {
         id: 2,
-        name: "Priya Sharma",
+        name: "Priya",
         position: "Student",
         message:
         "I love how interactive the courses are. The videos helped me remember concepts much better.",
@@ -23,7 +23,7 @@ const Testimonials = () => {
     },
     {
         id: 3,
-        name: "Karan Verma",
+        name: "Charles",
         position: "Student",
         message:
         "The platform feels like a personal tutor. I can learn at my own pace and revisit lessons whenever I need.",
@@ -32,7 +32,7 @@ const Testimonials = () => {
     },
     {
         id: 4,
-        name: "Neha Gupta",
+        name: "Neha",
         position: "Student",
         message:
         "EduNest makes learning exciting. The colorful lessons and easy explanations keep me engaged every day.",
@@ -41,7 +41,7 @@ const Testimonials = () => {
     },
     {
         id: 5,
-        name: "Rohan Iyer",
+        name: "Rohan",
         position: "Student",
         message:
         "The best part is the variety of activities. I actually look forward to studying because it never feels boring.",
@@ -50,7 +50,7 @@ const Testimonials = () => {
     },
     {
         id: 6,
-        name: "Ananya Desai",
+        name: "Ananya",
         position: "Student",
         message:
         "EduNest has helped me improve so much in a short time. I feel more confident and motivated to learn new things.",

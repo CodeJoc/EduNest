@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import "./coursestudy.css";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { CourseData } from "../../context/CourseContext";
-import { server } from "../../config";
+import { server } from "../../main";
 
 const CourseStudy = ({ user }) => {
   const params = useParams();
