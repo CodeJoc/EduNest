@@ -95,12 +95,19 @@ export const loginUser = TryCatch(async (req, res) => {
     expiresIn: "15d",
   });
 
+  res.cookie("token", token, {
+    httpOnly: true,
+    secure: true,
+    sameSite: "none",
+    maxAge: 15 * 24 * 60 * 60 * 1000,
+  });
+
   res.json({
     message: `Welcome back ${user.name}`,
-    token,
     user,
   });
 });
+
 
 export const myProfile = TryCatch(async (req, res) => {
   const user = await User.findById(req.user._id);
