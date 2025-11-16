@@ -11,8 +11,10 @@ import adminRoutes from "./routes/admin.js";
 
 dotenv.config();
 
+// Connect to MongoDB
 connectDb();
 
+// Razorpay Instance
 export const instance = new Razorpay({
   key_id: process.env.Razorpay_Key,
   key_secret: process.env.Razorpay_Secret,
@@ -20,26 +22,29 @@ export const instance = new Razorpay({
 
 const app = express();
 
+// Middlewares
 app.use(express.json());
 app.use(cookieParser());
 
 app.use(
   cors({
     origin: "https://edu-nest-omega.vercel.app",
-    credentials: true,
+    credentials: true
   })
 );
 
+// Serve static files
 app.use("/uploads", express.static("uploads"));
 
-// API routes
+// API Routes
 app.use("/api/user", userRoutes);
 app.use("/api/course", courseRoutes);
 app.use("/api/admin", adminRoutes);
 
+// Default Route
 app.get("/", (req, res) => {
-  res.send("Server is working");
+  res.send("Edu Nest Backend Running Successfully");
 });
 
-// Export app for Vercel serverless
+// Export app for Vercel (Do NOT use app.listen)
 export default app;
