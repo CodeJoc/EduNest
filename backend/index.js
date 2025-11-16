@@ -33,9 +33,9 @@ app.use(
 app.use("/uploads", express.static("uploads"));
 
 // API routes
-app.use("/api/user", userRoutes);
-app.use("/api/course", courseRoutes);
-app.use("/api/admin", adminRoutes);
+app.use("/user", userRoutes);
+app.use("/course", courseRoutes);
+app.use("/admin", adminRoutes);
 
 app.get("/", (req, res) => {
   res.send("Server is working");
