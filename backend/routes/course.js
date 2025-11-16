@@ -12,12 +12,25 @@ import { isAuth } from "../middlewares/isAuth.js";
 
 const router = express.Router();
 
-router.get("/course/all", getAllCourses);
-router.get("/course/:id", getSingleCourse);
+// FINAL ROUTES = /api/course/all
+router.get("/all", getAllCourses);
+
+// FINAL ROUTES = /api/course/:id
+router.get("/:id", getSingleCourse);
+
+// FINAL ROUTES = /api/course/lectures/:id
 router.get("/lectures/:id", isAuth, fetchLectures);
+
+// FINAL ROUTES = /api/course/lecture/:id
 router.get("/lecture/:id", isAuth, fetchLecture);
+
+// FINAL ROUTES = /api/course/mycourse
 router.get("/mycourse", isAuth, getMyCourses);
-router.post("/course/checkout/:id", isAuth, checkout);
+
+// FINAL ROUTES = /api/course/checkout/:id
+router.post("/checkout/:id", isAuth, checkout);
+
+// FINAL ROUTES = /api/course/verification/:id
 router.post("/verification/:id", isAuth, paymentVerification);
 
 export default router;
