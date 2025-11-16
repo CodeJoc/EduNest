@@ -36,7 +36,7 @@ app.use(
 // Serve static files
 app.use("/uploads", express.static("uploads"));
 
-// API Routes
+// API routes
 app.use("/api/user", userRoutes);
 app.use("/api/course", courseRoutes);
 app.use("/api/admin", adminRoutes);
